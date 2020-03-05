@@ -35,7 +35,10 @@
               .Entity<Sale>()
               .HasKey(s => s.SaleId);
 
-
+            modelBuilder
+                .Entity<Sale>()
+                .Property(s => s.Date)
+                .HasDefaultValueSql("GETDATE()");
         }
 
         private void OnModelCreatingStore(ModelBuilder modelBuilder)
