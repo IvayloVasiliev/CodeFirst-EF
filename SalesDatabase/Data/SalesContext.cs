@@ -97,6 +97,11 @@
                 .Entity<Product>()
                 .HasMany(p => p.Sales)
                 .WithOne(s => s.Product);
+
+            modelBuilder
+                .Entity<Product>()
+                .Property(p => p.Description)
+                .HasMaxLength(250);
         }
     }
 }
